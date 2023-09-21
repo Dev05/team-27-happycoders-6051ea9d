@@ -18,13 +18,13 @@ namespace levelup
             this.MaxY=maxY;
     }    
 
-    public bool Validate(int xCoordinate, int yCoordinate)
+    public bool Validate(Position position)
     {
-        if (xCoordinate < MinX) return false;
-        if (yCoordinate < MinY) return false;
+        if (position.X < MinX) return false;
+        if (position.Y < MinY) return false;
 
-        if (xCoordinate > MaxX) return false;
-        if (yCoordinate > MaxY) return false;
+        if (position.X > MaxX) return false;
+        if (position.Y > MaxY) return false;
 
         return true;
     }    

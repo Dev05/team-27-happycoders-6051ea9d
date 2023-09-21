@@ -19,7 +19,8 @@ namespace levelup
         {
 
             InitMap(0,0,9,9);
-            bool IsValidCoordinate = testObj.Validate(10,0);
+            Position p=new Position(10,0);
+            bool IsValidCoordinate = testObj.Validate(p);
             Assert.IsFalse(IsValidCoordinate);
         }
 
@@ -27,7 +28,8 @@ namespace levelup
         public void ValidateValidCoordinates()
         {
             InitMap(0,0,9,9);
-            bool IsValidCoordinate = testObj.Validate(5,5);
+            Position p=new Position(5,5);
+            bool IsValidCoordinate = testObj.Validate(p);
             Assert.IsTrue(IsValidCoordinate);
         }
     }
