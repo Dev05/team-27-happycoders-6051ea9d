@@ -30,34 +30,35 @@ namespace levelup
 
 
          [Test]
-         public void MoveUp(){
+         public void MoveNorth(){
             var testObj = new Character("Terminator");
             //Default position is 5, 5
-            bool validMove = testObj.Move("UP");
-            Assert.IsTrue(validMove);
+            Position newpos= new Position(5,6);
+            Position newPosition = testObj.Move(GameController.DIRECTION.NORTH);
+            Assert.AreEqual(newPosition, ??????);
          }
 
          [Test]
-         public void MoveDown(){
+         public void MoveSouth(){
             var testObj = new Character("Terminator");
             //Default position is 5, 5
-            bool validMove = testObj.Move("DOWN");
+            Position newPosition = testObj.Move(GameController.DIRECTION.SOUTH);
             Assert.IsTrue(validMove);
          }
 
         [Test]
-         public void MoveRight(){
+         public void MoveWest(){
            var testObj = new Character("Terminator");
             //Default position is 5, 5
-            bool validMove = testObj.Move("RIGHT");
+            Position newPosition = testObj.Move(GameController.DIRECTION.WEST);
             Assert.IsTrue(validMove);
          }
 
          [Test]
-         public void MoveLeft(){
+         public void MoveEast(){
            var testObj = new Character("Terminator");
             //Default position is 5, 5
-            bool validMove = testObj.Move("LEFT");
+            Position newPosition = testObj.Move(GameController.DIRECTION.EAST);
             Assert.IsTrue(validMove);
          }
     }
