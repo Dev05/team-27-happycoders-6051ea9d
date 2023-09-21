@@ -9,14 +9,13 @@ namespace levelup
         private Map? testObj;
 
   
-        [SetUp]
         public void InitMap(int minX, int minY, int maxX, int maxY)
         {
-             testObj = new Map(MinX, MinY, MaxX, MaxY);
+             testObj = new Map(minX, minY, maxX, maxY);
         }
 
         [Test]
-        public bool ValidateInvalidCoordinates()
+        public void ValidateInvalidCoordinates()
         {
 
             InitMap(0,0,9,9);
@@ -25,7 +24,7 @@ namespace levelup
         }
 
         [Test]
-        public bool ValidateValidCoordinates()
+        public void ValidateValidCoordinates()
         {
             InitMap(0,0,9,9);
             bool IsValidCoordinate = testObj.Validate(5,5);
