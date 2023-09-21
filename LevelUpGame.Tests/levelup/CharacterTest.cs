@@ -33,9 +33,10 @@ namespace levelup
          public void MoveNorth(){
             var testObj = new Character("Terminator");
             //Default position is 5, 5
-            Position newpos= new Position(5,6);
+            Position testPos= new Position(5,6);
             Position newPosition = testObj.Move(GameController.DIRECTION.NORTH);
-            Assert.AreEqual(newPosition, ??????);
+            Assert.AreEqual(newPosition.X, testPos.X);
+            Assert.AreEqual(newPosition.Y, testPos.Y);
          }
 
          [Test]
