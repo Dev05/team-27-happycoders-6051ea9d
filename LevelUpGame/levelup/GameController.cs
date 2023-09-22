@@ -6,6 +6,7 @@ namespace levelup
     {
         public readonly string DEFAULT_CHARACTER_NAME = "Character";
         private Character terminator;
+        public Position startPosition;
         private Map map=new Map(0,0,9,9);
         public record struct GameStatus(
             // TODO: Add other status data
@@ -25,6 +26,7 @@ namespace levelup
             status.currentPosition = new Position(5,5);
             //TODO: Write a failing unit test that will force you to set this to the right number
             status.moveCount = 0;
+            startPosition=new Position(5,5);
         }
 
         // Pre-implemented to demonstrate ATDD

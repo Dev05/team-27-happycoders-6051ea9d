@@ -34,7 +34,7 @@ namespace levelup
     
     public Position CalculatePosition(Position position, DIRECTION d)
     {
-        Position newPosition =position;
+        Position newPosition =new Position(position.X,position.Y);
         bool validPosition = false;
             TotalMoveCount++;
           if (d == DIRECTION.NORTH)

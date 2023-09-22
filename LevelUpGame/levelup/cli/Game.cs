@@ -160,7 +160,7 @@ class Game
         foreach (GameController.GameStatus status in gameHistory)
         {
             // TODO: Override toString on game status to print pretty
-            Console.WriteLine(string.Format("Character Name: {0}; Current Position: X:{1} ;Y:{2}; Move Count: {3}",status.characterName,status.currentPosition.X, status.currentPosition.Y,status.moveCount));
+            Console.WriteLine(string.Format("Character Name: {0}; Current Position: X:{1} ;Y:{2}; Move Count: {3}; Start Position: X: {4} Y: {5} ",status.characterName,status.currentPosition.X, status.currentPosition.Y,status.moveCount,gameController.startPosition.X, gameController.startPosition.Y));
             Console.WriteLine(status);
         }
         // TODO: Print anything else you committed to in your mockup
