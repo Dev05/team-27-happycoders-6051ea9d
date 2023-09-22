@@ -52,8 +52,16 @@ namespace levelup
                 newPosition.X = position.X + 1;
             }
 
-                validPosition = Validate(newPosition);
-        return (validPosition ? newPosition : position); 
+            validPosition = Validate(newPosition);
+            if (validPosition)
+            {
+                    return newPosition;
+            }
+            else
+            {
+                    return position;
+            }
+        //return (validPosition ? newPosition : position); 
     }
 
 

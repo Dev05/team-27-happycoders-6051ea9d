@@ -118,6 +118,7 @@ class Game
         // TODO: Update this prompt. Also, do you want to get the game status and tell
         // the character where their character is?
         Console.WriteLine("Welcome to Forests and Monsters! You have entered a mysterious place.");
+
     }
     static void MoveNorth()
     {
