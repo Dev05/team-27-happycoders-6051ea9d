@@ -16,7 +16,7 @@ namespace levelup
 
         // TODO: Ensure this AND CLI commands match domain model
 
-        GameStatus status = new GameStatus();
+        public GameStatus status = new GameStatus();
 
         public GameController()
         {
