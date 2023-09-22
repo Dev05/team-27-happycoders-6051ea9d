@@ -33,7 +33,7 @@ namespace levelup
     }
 
     public void Move(DIRECTION dir){
-        //currentPosition=currentMap.CalculatePosition(currentPosition,dir);
+        currentPosition=currentMap.CalculatePosition(currentPosition,dir);
     }
 
     }

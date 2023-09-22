@@ -60,7 +60,8 @@ namespace levelup
 
           [Test]
             public void MoveNorthTest(){
-            var testObj= new Character();        
+            var testObj= new Character();    
+            testObj.EnterMap(new Map(0,0,9,9));    
             testObj.Move(DIRECTION.NORTH);   
             Position currPos= testObj.GetPosition();
             Assert.AreEqual(currPos.X,5);
@@ -69,7 +70,8 @@ namespace levelup
 
           [Test]
             public void MoveSouthhTest(){
-            var testObj= new Character();        
+            var testObj= new Character();    
+             testObj.EnterMap(new Map(0,0,9,9));       
             testObj.Move(DIRECTION.SOUTH);   
             Position currPos= testObj.GetPosition();
             Assert.AreEqual(currPos.X,5);
@@ -78,7 +80,8 @@ namespace levelup
 
           [Test]
             public void MoveEastTest(){
-            var testObj= new Character();        
+            var testObj= new Character();  
+             testObj.EnterMap(new Map(0,0,9,9));         
             testObj.Move(DIRECTION.EAST);   
             Position currPos= testObj.GetPosition();
             Assert.AreEqual(currPos.X,6);
@@ -87,7 +90,8 @@ namespace levelup
 
           [Test]
             public void MoveWestTest(){
-            var testObj= new Character();        
+            var testObj= new Character();    
+             testObj.EnterMap(new Map(0,0,9,9));       
             testObj.Move(DIRECTION.WEST);   
             Position currPos= testObj.GetPosition();
             Assert.AreEqual(currPos.X,4);
