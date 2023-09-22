@@ -31,26 +31,17 @@ namespace levelup
         // TODO: Update this if it does not match your design
         public void CreateCharacter(String name)
         {
-            if (name != null && !name.Equals(""))
-            {
-                this.status.characterName = name;
-            }
-            else
-            {
-                this.status.characterName = DEFAULT_CHARACTER_NAME;
-            }
+           terminator =new Character(name);
+           this.status.characterName=name;
         }
 
         public void StartGame()
         {
             // TODO: Implement startGame - Should probably create positions and put the character on one
-            // TODO: Should also update the game status?
-            terminator =new Character(this.status.characterName);
+            // TODO: Should also update the game status?         
             terminator.currentPosition=this.status.currentPosition;
             terminator.currentMap=map;
             terminator.EnterMap(map);
-
-
         }
 
         public GameStatus GetStatus()
