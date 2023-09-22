@@ -7,7 +7,7 @@ namespace levelup
     public String Name{get;set;}
     private String DefaultName="Character";
     public Position currentPosition {get;set;}
-    private Map map;
+    public Map currentMap;
 
 
     public Character(String name){ 
@@ -24,6 +24,10 @@ namespace levelup
 
     public String GetName(){
         return Name;
+    }
+
+    public void EnterMap(Map map){
+        currentMap=map;
     }
 
 
