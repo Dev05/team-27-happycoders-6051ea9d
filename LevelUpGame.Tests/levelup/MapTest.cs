@@ -47,6 +47,19 @@ namespace levelup
             
         }
 
+                [Test]
+        public void CalculateTotalMovesTest()
+        {
+            InitMap(0,0,9,9);
+            testObj.TotalMoveCount =5;
+            Position p=new Position(5,5);
+            Position ExpectedPosition = new Position(5,6);
+            Position newPosition = testObj.CalculatePosition(p, DIRECTION.NORTH);
+            Assert.AreEqual(newPosition.X,ExpectedPosition.X);
+            Assert.AreEqual(newPosition.Y,ExpectedPosition.Y);
+            Assert.AreEqual(testObj.TotalMoveCount,6);
+        }
+
         private string GetDebuggerDisplay()
         {
             return ToString();

@@ -11,6 +11,8 @@ namespace levelup
         private int MaxX;
         private int MaxY;
 
+        public int TotalMoveCount { get; set; }
+
     public Map(int minX, int minY, int maxX, int maxY)
     {
             this.MinX=minX;
@@ -34,7 +36,7 @@ namespace levelup
     {
         Position newPosition =position;
         bool validPosition = false;
-            
+            TotalMoveCount++;
           if (d == DIRECTION.NORTH)
             {
                 newPosition.Y = position.Y +1;
@@ -49,25 +51,8 @@ namespace levelup
             else if (d == DIRECTION.EAST) {
                 newPosition.X = position.X + 1;
             }
-        /* switch(direction)
-        {
-            case GameController.DIRECTION.NORTH: 
-                newPosition.Y++;
-                break;
-            case GameController.DIRECTION.SOUTH: 
-                newPosition.Y--;
-                break;
-            case GameController.DIRECTION.WEST: 
-                 newPosition.X--;
-                 break;
-            case GameController.DIRECTION.EAST: 
-                newPosition.X++;
-                break;
-            default:
-                throw new System.Exception("No Direction Found");
-            */
+
                 validPosition = Validate(newPosition);
-        //}
         return (validPosition ? newPosition : position); 
     }
 
