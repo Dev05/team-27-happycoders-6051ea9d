@@ -6,13 +6,12 @@ namespace levelup
 
     public String Name{get;set;}
     public Position currentPosition {get;set;}
-    public Position newPosition {get;set;}
-
-    private Position GetPosition(){
+   
+    public Position GetPosition(){
         return currentPosition;
     }
 
-    private void SetPosition(Position position){
+    public void SetPosition(Position position){
         currentPosition = position;
     }
 
@@ -23,19 +22,23 @@ namespace levelup
     }
 
     public Position Move(GameController.DIRECTION direction){
-        newPosition = currentPosition;
+       Position newPosition = currentPosition;
         bool validPosition = false;
-        CASE direction:
-            GameController.DIRECTION.NORTH: 
-                validPosition = Map.Validate(newPosition.Y++); break;
-            GameController.DIRECTION.SOUTH: 
-                validPosition = Map.Validate(newPosition.Y--); break;
-            GameController.DIRECTION.WEST: 
-                validPosition = Map.Validate(newPosition.X--); break;
-            GameController.DIRECTION.EAST: 
-                validPosition = Map.Validate(newPosition.X++); break;
+        switch(direction){
+            case GameController.DIRECTION.NORTH: 
+                validPosition = Map.Validate(newPosition.Y++);
+                 break;
+            case GameController.DIRECTION.SOUTH: 
+                validPosition = Map.Validate(newPosition.Y--); 
+                break;
+            case GameController.DIRECTION.WEST: 
+                validPosition = Map.Validate(newPosition.X--);
+                 break;
+            case GameController.DIRECTION.EAST: 
+                validPosition = Map.Validate(newPosition.X++); 
+                break;
 
-
+        }
         return (validPosition ? newPosition : currentPosition);
     }
 

@@ -29,38 +29,66 @@ namespace levelup
          }
 
 
+            [Test]
+            public void getCharacterPositionTest(){
+            var testObj= new Character("abc");
+            Position pos= testObj.GetPosition();            
+            Assert.AreEqual(pos.X,5);
+           Assert.AreEqual(pos.Y,5);
+         }
+
+         [Test]
+            public void setCharacterPositionTest(){
+            var testObj= new Character("abc");
+            testObj.SetPosition(0,0);
+            Position pos= testObj.GetPosition();            
+            Assert.AreEqual(pos.X,0);
+           Assert.AreEqual(pos.Y,0);
+         }
+
+        
+		
          [Test]
          public void MoveNorth(){
             var testObj = new Character("Terminator");
             //Default position is 5, 5
-            Position testPos= new Position(5,6);
-            Position newPosition = testObj.Move(GameController.DIRECTION.NORTH);
-            Assert.AreEqual(newPosition.X, testPos.X);
-            Assert.AreEqual(newPosition.Y, testPos.Y);
+			Position newPosition= new Position(5,6);
+            Position nextPosition = testObj.Move(GameController.DIRECTION.NORTH);
+            Assert.IsEqual(newPosition.X,nextPosition.X);
+			Assert.IsEqual(newPosition.Y,nextPosition.Y);
          }
-
+		 
          [Test]
          public void MoveSouth(){
             var testObj = new Character("Terminator");
             //Default position is 5, 5
-            Position newPosition = testObj.Move(GameController.DIRECTION.SOUTH);
-            Assert.IsTrue(validMove);
+			Position newPosition= new Position(5,4);
+            Position nextPosition = testObj.Move(GameController.DIRECTION.SOUTH);
+            Assert.IsEqual(newPosition.X,nextPosition.X);
+			Assert.IsEqual(newPosition.Y,nextPosition.Y);
          }
 
         [Test]
          public void MoveWest(){
            var testObj = new Character("Terminator");
             //Default position is 5, 5
+			Position newPosition= new Position(4,5);
             Position newPosition = testObj.Move(GameController.DIRECTION.WEST);
-            Assert.IsTrue(validMove);
+            Assert.IsEqual(newPosition.X,nextPosition.X);
+			Assert.IsEqual(newPosition.Y,nextPosition.Y);
          }
 
          [Test]
          public void MoveEast(){
            var testObj = new Character("Terminator");
             //Default position is 5, 5
+			Position newPosition= new Position(6,5);
             Position newPosition = testObj.Move(GameController.DIRECTION.EAST);
-            Assert.IsTrue(validMove);
+             Assert.IsEqual(newPosition.X,nextPosition.X);
+			Assert.IsEqual(newPosition.Y,nextPosition.Y);
          }
+
+         
+         
     }
 }
