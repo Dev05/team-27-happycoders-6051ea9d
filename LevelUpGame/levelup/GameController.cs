@@ -39,7 +39,7 @@ namespace levelup
         {
             // TODO: Implement startGame - Should probably create positions and put the character on one
             // TODO: Should also update the game status?         
-            terminator.currentPosition=this.status.currentPosition;
+            terminator.currentPosition=this.status.currentPosition;           
             terminator.currentMap=map;
             terminator.EnterMap(map);
         }
@@ -54,6 +54,8 @@ namespace levelup
             //TODO: Implement move - should call something on another class
             //TODO: Should probably also update the game status
             terminator.Move(directionToMove);
+            this.status.currentPosition = terminator.GetPosition();
+             this.status.moveCount=map.TotalMoveCount;
         }
 
         public void SetCharacterPosition(Position coordinates)
