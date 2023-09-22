@@ -32,5 +32,14 @@ namespace levelup
             bool IsValidCoordinate = testObj.Validate(p);
             Assert.IsTrue(IsValidCoordinate);
         }
+
+        [Test]
+        public void CalculatePositionTest()
+        {
+            InitMap(0,0,9,9);
+            Position p=new Position(5,5);
+            Position newPosition = testObj.CalculatePosition(p, DIRECTION.NORTH);
+            Assert.AreEqual(newPosition, new Position(5,6));
+        }
     }
 }

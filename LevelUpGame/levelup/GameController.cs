@@ -14,10 +14,6 @@ namespace levelup
             );
 
         // TODO: Ensure this AND CLI commands match domain model
-        public enum DIRECTION
-        {
-            NORTH, SOUTH, EAST, WEST
-        }
 
         GameStatus status = new GameStatus();
 
@@ -79,4 +75,9 @@ namespace levelup
 
 
     }
+
+        public enum DIRECTION
+        {
+            NORTH, SOUTH, EAST, WEST
+        }
 }

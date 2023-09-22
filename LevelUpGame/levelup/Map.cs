@@ -5,6 +5,7 @@ namespace levelup
     public class Map
     {
 
+
         private int MinX;
         private int MinY;
         private int MaxX;
@@ -28,7 +29,47 @@ namespace levelup
 
         return true;
     }    
-
+    
+    public Position CalculatePosition(Position position, DIRECTION d)
+    {
+        Position newPosition =position;
+        bool validPosition = false;
+            
+          if (d == DIRECTION.NORTH)
+            {
+                newPosition.Y = position.Y +1;
+            }
+            else if (d == DIRECTION.SOUTH)
+            {
+                newPosition.Y = position.Y - 1;
+            }
+            else if (d == DIRECTION.WEST) {
+                newPosition.X = position.X -1 ;
+            }
+            else if (d == DIRECTION.EAST) {
+                newPosition.X = position.X + 1;
+            }
+        /* switch(direction)
+        {
+            case GameController.DIRECTION.NORTH: 
+                newPosition.Y++;
+                break;
+            case GameController.DIRECTION.SOUTH: 
+                newPosition.Y--;
+                break;
+            case GameController.DIRECTION.WEST: 
+                 newPosition.X--;
+                 break;
+            case GameController.DIRECTION.EAST: 
+                newPosition.X++;
+                break;
+            default:
+                throw new System.Exception("No Direction Found");
+            */
+                validPosition = Validate(newPosition);
+        //}
+        return (validPosition ? newPosition : position); 
+    }
 
 
     }

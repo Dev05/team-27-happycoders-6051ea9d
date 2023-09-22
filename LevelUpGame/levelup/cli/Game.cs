@@ -121,23 +121,23 @@ class Game
     }
     static void MoveNorth()
     {
-        gameController.Move(GameController.DIRECTION.NORTH);
+        gameController.Move(DIRECTION.NORTH);
         updateStatus(gameController.GetStatus());
     }
     static void MoveSouth()
     {
-        gameController.Move(GameController.DIRECTION.SOUTH);
+        gameController.Move(DIRECTION.SOUTH);
         updateStatus(gameController.GetStatus());
     }
     static void MoveEast()
     {
-        gameController.Move(GameController.DIRECTION.EAST);
+        gameController.Move(DIRECTION.EAST);
         updateStatus(gameController.GetStatus());
     }
 
     static void MoveWest()
     {
-        gameController.Move(GameController.DIRECTION.WEST);
+        gameController.Move(DIRECTION.WEST);
         updateStatus(gameController.GetStatus());
     }
 
