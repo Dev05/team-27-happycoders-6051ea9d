@@ -123,27 +123,23 @@ class Game
     static void MoveNorth()
     {
         gameController.Move(DIRECTION.NORTH);
-        updateStatus(gameController.GetStatus());
-        gameHistory.Add(gameController.status);
+        updateStatus(gameController.GetStatus());       
     }
     static void MoveSouth()
     {
         gameController.Move(DIRECTION.SOUTH);
-        updateStatus(gameController.GetStatus());
-        gameHistory.Add(gameController.status);
+        updateStatus(gameController.GetStatus());       
     }
     static void MoveEast()
     {
         gameController.Move(DIRECTION.EAST);
-        updateStatus(gameController.GetStatus());
-         gameHistory.Add(gameController.status);
+        updateStatus(gameController.GetStatus());       
     }
 
     static void MoveWest()
     {
         gameController.Move(DIRECTION.WEST);
-        updateStatus(gameController.GetStatus());
-        gameHistory.Add(gameController.status);
+        updateStatus(gameController.GetStatus());       
     }
 
     static void EndGame()
@@ -173,7 +169,9 @@ class Game
 
     private static void updateStatus(GameController.GameStatus status)
     {
-        gameHistory.Add(status);
+        GameController.GameStatus newStatus =  new GameController.GameStatus(status.characterName,
+        status.currentPosition,status.moveCount);
+        gameHistory.Add(newStatus);
     }
 
 
