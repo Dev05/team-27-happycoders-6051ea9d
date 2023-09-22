@@ -1,9 +1,11 @@
 using NUnit.Framework;
 using levelup;
+using System.Diagnostics;
 
 namespace levelup
 {
     [TestFixture]
+    [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
     public class MapTest
     {
         private Map? testObj;
@@ -38,8 +40,16 @@ namespace levelup
         {
             InitMap(0,0,9,9);
             Position p=new Position(5,5);
+            Position ExpectedPosition = new Position(5,6);
             Position newPosition = testObj.CalculatePosition(p, DIRECTION.NORTH);
-            Assert.AreEqual(newPosition, new Position(5,6));
+            Assert.AreEqual(newPosition.X,ExpectedPosition.X);
+            Assert.AreEqual(newPosition.Y,ExpectedPosition.Y);
+            
+        }
+
+        private string GetDebuggerDisplay()
+        {
+            return ToString();
         }
     }
 }
