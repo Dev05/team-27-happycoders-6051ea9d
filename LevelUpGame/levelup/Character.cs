@@ -5,42 +5,27 @@ namespace levelup
     public class Character{
 
     public String Name{get;set;}
+    private String DefaultName="Character";
     public Position currentPosition {get;set;}
-   
+    private Map map;
+
+
+    public Character(String name){ 
+        Name=name??DefaultName; 
+    }
+
+    public Character(){ 
+        Name=DefaultName; 
+    }    
+    
     public Position GetPosition(){
         return currentPosition;
     }
 
-    public void SetPosition(Position position){
-        currentPosition = position;
+    public String GetName(){
+        return Name;
     }
 
-    public Character(String name){
-        Name=name??"Character";
-        currentPosition.X = 5;
-        currentPosition.Y = 5;
-    }
-
-    public Position Move(GameController.DIRECTION direction){
-       Position newPosition = currentPosition;
-        bool validPosition = false;
-        switch(direction){
-            case GameController.DIRECTION.NORTH: 
-                validPosition = Map.Validate(newPosition.Y++);
-                 break;
-            case GameController.DIRECTION.SOUTH: 
-                validPosition = Map.Validate(newPosition.Y--); 
-                break;
-            case GameController.DIRECTION.WEST: 
-                validPosition = Map.Validate(newPosition.X--);
-                 break;
-            case GameController.DIRECTION.EAST: 
-                validPosition = Map.Validate(newPosition.X++); 
-                break;
-
-        }
-        return (validPosition ? newPosition : currentPosition);
-    }
 
     }
 }
