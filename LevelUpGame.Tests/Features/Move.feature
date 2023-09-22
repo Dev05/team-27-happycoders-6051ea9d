@@ -9,7 +9,7 @@ Scenario Outline: Move in a direction
     And starts at YCoordinates <startingPositionY>
     And the player chooses to move in <direction>
     And the current move count is <startingMoveCount>
-    When the character moves
+    When the character moves <startingPositionX> <startingPositionY>
     Then the character is now at position with XCoordinates <endingPositionX>
     And YCoordinates  <endingPositionY>
     And the new move count is <endingMoveCount>
