@@ -124,22 +124,26 @@ class Game
     {
         gameController.Move(DIRECTION.NORTH);
         updateStatus(gameController.GetStatus());
+        gameHistory.Add(gameController.status);
     }
     static void MoveSouth()
     {
         gameController.Move(DIRECTION.SOUTH);
         updateStatus(gameController.GetStatus());
+        gameHistory.Add(gameController.status);
     }
     static void MoveEast()
     {
         gameController.Move(DIRECTION.EAST);
         updateStatus(gameController.GetStatus());
+         gameHistory.Add(gameController.status);
     }
 
     static void MoveWest()
     {
         gameController.Move(DIRECTION.WEST);
         updateStatus(gameController.GetStatus());
+        gameHistory.Add(gameController.status);
     }
 
     static void EndGame()
@@ -160,6 +164,7 @@ class Game
         foreach (GameController.GameStatus status in gameHistory)
         {
             // TODO: Override toString on game status to print pretty
+            Console.WriteLine(string.Format("Character Name: {0}; Current Position: X:{1} ;Y:{2}; Move Count: {3}",status.characterName,status.currentPosition.X, status.currentPosition.Y,status.moveCount));
             Console.WriteLine(status);
         }
         // TODO: Print anything else you committed to in your mockup
